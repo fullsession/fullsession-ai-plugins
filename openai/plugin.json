@@ -1,0 +1,111 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "fullsession",
+  "version": "1.0.0",
+  "description": "See how visitors really use your website: frustrated pages, funnel drop-offs and session replays from FullSession.",
+  "author": {
+    "name": "FullSession",
+    "url": "https://www.fullsession.io"
+  },
+  "homepage": "https://www.fullsession.io",
+  "keywords": [
+    "analytics",
+    "session replay",
+    "heatmaps",
+    "funnels",
+    "conversion",
+    "ux"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "FullSession",
+        "shortDescription": "Session replay & UX insights",
+        "longDescription": "See how visitors really use your website, right from ChatGPT. Ask about frustrated pages, funnel drop-offs or specific sessions, and get clear answers with charts and links to the session replays.\n\n- Find where visitors struggle and why\n- See where your funnels lose people\n- Find and replay sessions\n- Track trends and get AI recommendations on what to fix\n- Create and update funnels, segments and dashboards",
+        "developerName": "FullSession",
+        "category": "Analytics and Data",
+        "capabilities": [
+          "Find frustrated pages and elements",
+          "Analyze funnel drop-offs",
+          "Search and replay sessions",
+          "Trends, breakdowns and dashboards",
+          "Lift AI conversion recommendations",
+          "Create and edit funnels, segments and dashboards"
+        ],
+        "websiteURL": "https://www.fullsession.io",
+        "supportURL": "https://www.fullsession.io/contact",
+        "privacyPolicyURL": "https://www.fullsession.io/privacy-policy",
+        "termsOfServiceURL": "https://www.fullsession.io/terms-of-use",
+        "defaultPrompt": [
+          "Which pages have the most rage clicks this week?",
+          "Where do users drop off in my checkout funnel?",
+          "Show me recent sessions with JavaScript errors."
+        ],
+        "brandColor": "#1884D9",
+        "brandColorDark": "#1884D9",
+        "composerIcon": "./assets/icon.png",
+        "composerIconDark": "./assets/icon-dark.png",
+        "logo": "./assets/icon.png",
+        "logoDark": "./assets/icon-dark.png",
+        "screenshots": []
+      },
+      "onboardingSkill": "./skills/get-started/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "TODO(reviewer account data) Find the pages with the most frustration",
+              "prompt": "Which pages had the most rage clicks in the last 30 days?",
+              "tools_triggered": "list_sites, compare_pages_by_frustration",
+              "expected_behavior": "Shows a ranked card of pages by rage clicks with affected sessions and page views, and a short summary of the top page."
+            },
+            {
+              "description": "TODO(reviewer account data) Funnel drop-off analysis",
+              "prompt": "Where do users drop off in the checkout funnel this month?",
+              "tools_triggered": "list_funnels, get_funnel_analysis",
+              "expected_behavior": "Shows a funnel card with conversion rate, entered and completed counts, and highlights the step with the biggest drop."
+            },
+            {
+              "description": "TODO(reviewer account data) Search sessions with errors",
+              "prompt": "Show me recent sessions that had JavaScript errors.",
+              "tools_triggered": "search_sessions",
+              "expected_behavior": "Shows session cards with time, device, pages and error badges, each with a Replay link; visitor emails are masked."
+            },
+            {
+              "description": "TODO(reviewer account data) Trend over time",
+              "prompt": "How did sessions change over the last 30 days compared to the previous period?",
+              "tools_triggered": "get_trend",
+              "expected_behavior": "Shows a trend chart with the total, a dashed previous-period line, and the percentage change."
+            },
+            {
+              "description": "TODO(reviewer account data) Create a funnel with confirmation",
+              "prompt": "Create a funnel called 'Pricing to signup' with two steps: visit /pricing, then visit /signup.",
+              "tools_triggered": "generate_funnel_steps_from_prompt, create_funnel",
+              "expected_behavior": "Drafts the two steps, asks the user to confirm them, then (after ChatGPT's approval prompt) creates the funnel and says it is processing."
+            }
+          ],
+          "negative": [
+            {
+              "description": "General knowledge, not account data",
+              "prompt": "What is session replay in general?"
+            },
+            {
+              "description": "Unrelated request",
+              "prompt": "Write me a haiku about autumn."
+            },
+            {
+              "description": "Unsupported action: payments",
+              "prompt": "Upgrade my FullSession plan and charge my card."
+            }
+          ]
+        },
+        "demo_recording_url": "TODO(demo video URL)",
+        "commerce": false,
+        "commerce_description": "FullSession does not sell products or process payments in ChatGPT."
+      },
+      "publication": {
+        "release_notes": "Initial release: frustration, funnel, session, trend and dashboard analysis with interactive cards; create and edit segments, funnels, heatmaps, dashboards and charts."
+      }
+    }
+  }
+}
