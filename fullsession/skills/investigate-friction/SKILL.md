@@ -1,5 +1,5 @@
 ---
-name: fullsession-investigate-friction
+name: investigate-friction
 description: Step-by-step investigation of where and why visitors struggle on a site, from frustrated pages down to the exact element and the session replays that prove it. Use when the user asks about rage clicks, dead clicks, error clicks, broken buttons, confusing pages, or "where are users frustrated?".
 ---
 

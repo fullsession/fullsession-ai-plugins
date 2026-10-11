@@ -1,5 +1,5 @@
 ---
-name: fullsession-get-started
+name: get-started
 description: How to answer questions about a website's user behavior with FullSession (session replays, funnels, heatmaps, frustration signals, Lift AI recommendations and dashboards). Use whenever the user asks about their site's visitors, conversions, drop-offs, rage or dead clicks, errors, or wants to find or watch specific sessions.
 ---
 
@@ -34,7 +34,7 @@ FullSession records how visitors use a website: every session (with a replay), c
 | What to fix to convert more | `list_ai_goals`, then `get_ai_recommendations` (Lift AI) |
 | Saved dashboards and charts | `list_dashboards`, `get_dashboard_data`, `list_cards` |
 
-For deeper workflows, see the `fullsession-investigate-friction` and `fullsession-analyze-funnel` skills.
+For deeper workflows, see the `investigate-friction` and `analyze-funnel` skills.
 
 ## Presenting results
 
@@ -52,4 +52,4 @@ For deeper workflows, see the `fullsession-investigate-friction` and `fullsessio
 
 - A funnel that was just created or had its steps changed is "processing" for a few minutes; its numbers and edits are unavailable until it finishes.
 - `generate_segment_from_prompt` and `generate_funnel_steps_from_prompt` only draft definitions with an AI model; they save nothing.
-- Creating, editing and deleting segments, funnels, heatmaps, dashboards and charts is covered by the `fullsession-manage-assets` skill.
+- Creating, editing and deleting segments, funnels, heatmaps, dashboards and charts is covered by the `manage-assets` skill.

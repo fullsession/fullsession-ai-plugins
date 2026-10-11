@@ -1,0 +1,13 @@
+{
+  "name": "fullsession",
+  "displayName": "FullSession",
+  "version": "1.0.0",
+  "description": "See how visitors really use your website: find frustrated pages and elements, analyze funnel drop-offs, search and replay sessions, and track trends with FullSession.",
+  "author": {
+    "name": "FullSession",
+    "url": "https://www.fullsession.io"
+  },
+  "homepage": "https://www.fullsession.io",
+  "license": "MIT",
+  "keywords": ["analytics", "session replay", "heatmaps", "funnels", "conversion", "ux"]
+}
