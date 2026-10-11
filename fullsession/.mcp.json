@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "fullsession": {
+      "type": "http",
+      "url": "https://app.fullsession.io/mcp"
+    }
+  }
+}

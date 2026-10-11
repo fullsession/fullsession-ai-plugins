@@ -1,5 +1,5 @@
 ---
-name: fullsession-manage-assets
+name: manage-assets
 description: How to safely create, edit and delete FullSession segments, funnels, saved heatmaps, dashboards and charts. Use when the user asks to create, rename, change, organize or delete any of these.
 ---
 
