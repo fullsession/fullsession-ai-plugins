@@ -1,11 +1,10 @@
 # FullSession AI plugins
 
-Listing packages that bring FullSession into AI assistants: the **ChatGPT / Codex plugin** (OpenAI) and, later, the **Claude plugin** (Anthropic).
+Listing packages that bring FullSession into AI assistants: the **ChatGPT / Codex plugin** (OpenAI) and the **Claude plugin** (Anthropic).
 
 A plugin contains no application code. It is a small package of static files (a manifest, skills and images) that points the assistant at FullSession's hosted MCP server:
 
-- MCP server: `https://app.fullsession.io/mcp` (lives in the `FServiceProvider` repo, under `src/mcp`)
-- Plan and decisions: `FServiceProvider/docs/chatgpt-app-plan.md`
+- MCP server: `https://app.fullsession.io/mcp`
 
 ## Layout
 
@@ -18,7 +17,6 @@ fullsession/            the Claude plugin, committed as-is (Anthropic reads it f
   LICENSE               MIT
 openai/                 OpenAI manifest (plugin.json: listing, test cases) and mcp.json
 shared/assets/          icons and logos (used by the OpenAI package)
-docs/                   privacy policy section for AI assistant integrations
 build.mjs               validates and zips packages into dist/ (not committed)
 ```
 
