@@ -1,5 +1,5 @@
 ---
-name: fullsession-analyze-funnel
+name: analyze-funnel
 description: How to analyze a conversion funnel in FullSession, find the biggest drop-off, see who dropped and why, compare audiences, and get Lift AI recommendations. Use when the user asks about conversion, drop-off, checkout or signup completion, or a specific funnel.
 ---
 
@@ -7,7 +7,7 @@ description: How to analyze a conversion funnel in FullSession, find the biggest
 
 ## 1. Find the funnel
 
-`list_funnels` returns the site's funnels with their step names. Match the user's wording ("checkout", "signup") to a funnel name; if several fit, ask. If no funnel exists for what they describe, offer to create one (see `fullsession-manage-assets`).
+`list_funnels` returns the site's funnels with their step names. Match the user's wording ("checkout", "signup") to a funnel name; if several fit, ask. If no funnel exists for what they describe, offer to create one (see `manage-assets`).
 
 ## 2. Read the funnel
 
@@ -21,7 +21,7 @@ description: How to analyze a conversion funnel in FullSession, find the biggest
 
 `get_funnel_sessions` with `outcome: "dropped"` and the step **before** the drop returns the sessions that reached that step but never the next, with replay links. Offer 2–3 replays.
 
-To learn why, look for patterns: run `get_session` on a few dropped sessions, or check the drop step's page with `compare_pages_by_frustration` / `get_page_heatmap` (see `fullsession-investigate-friction`).
+To learn why, look for patterns: run `get_session` on a few dropped sessions, or check the drop step's page with `compare_pages_by_frustration` / `get_page_heatmap` (see `investigate-friction`).
 
 ## 4. Compare audiences
 

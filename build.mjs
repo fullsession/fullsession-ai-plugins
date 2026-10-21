@@ -1,8 +1,12 @@
-// Builds an installable plugin package from shared/ + <platform>/ into dist/.
+// Builds installable plugin packages into dist/.
 //
-//   node build.mjs                          production package (fails on TODOs with --strict)
+//   node build.mjs                          OpenAI package: openai/ + fullsession/skills + shared/assets
+//   node build.mjs --platform claude        Claude package: a zip of the fullsession/ plugin folder
 //   node build.mjs --mcp-url <url>/mcp      test package pointing at another MCP server (e.g. ngrok)
 //   node build.mjs --strict                 refuse to build while any TODO( remains
+//
+// The Claude directory reads fullsession/ straight from GitHub; the zip is only
+// for uploading to claude.ai while testing.
 import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { join, resolve } from "node:path";
@@ -14,6 +18,32 @@ const mcpUrl = opt("--mcp-url");
 const strict = args.includes("--strict");
 
 const ROOT = resolve(".");
+const PLUGIN = join(ROOT, "fullsession");
+
+if (platform === "claude") {
+  buildClaude();
+  process.exit(0);
+}
+
+function buildClaude() {
+  const manifest = JSON.parse(readFileSync(join(PLUGIN, ".claude-plugin", "plugin.json"), "utf8"));
+  const OUT = join(ROOT, "dist", `${manifest.name}${mcpUrl ? "-local" : ""}-claude-${manifest.version}`);
+  rmSync(OUT, { recursive: true, force: true });
+  cpSync(PLUGIN, OUT, { recursive: true, filter: p => !p.endsWith(".DS_Store") });
+  if (mcpUrl) {
+    const mcpPath = join(OUT, ".mcp.json");
+    const m = JSON.parse(readFileSync(mcpPath, "utf8"));
+    for (const server of Object.values(m.mcpServers)) server.url = mcpUrl;
+    writeFileSync(mcpPath, JSON.stringify(m, null, 2) + "\n");
+    const mf = join(OUT, ".claude-plugin", "plugin.json");
+    writeFileSync(mf, JSON.stringify({ ...manifest, name: `${manifest.name}-local`, displayName: `${manifest.displayName} Local` }, null, 2) + "\n");
+  }
+  const zip = `${OUT}.zip`;
+  rmSync(zip, { force: true });
+  execFileSync("zip", ["-qr", zip, "."], { cwd: OUT });
+  console.log(`Built ${zip}${mcpUrl ? `  (MCP: ${mcpUrl})` : ""}`);
+}
+
 const SRC = join(ROOT, platform);
 if (!existsSync(join(SRC, "plugin.json"))) throw new Error(`No ${platform}/plugin.json`);
 
@@ -43,7 +73,7 @@ if ((tests.positive ?? []).length !== 5) errors.push(`need exactly 5 positive te
 if ((tests.negative ?? []).length !== 3) errors.push(`need exactly 3 negative test cases (have ${(tests.negative ?? []).length})`);
 
 // Skills: every folder needs a SKILL.md with name + description frontmatter.
-const skillsDir = join(ROOT, "shared", "skills");
+const skillsDir = join(PLUGIN, "skills");
 for (const s of readdirSync(skillsDir).filter(d => existsSync(join(skillsDir, d, "SKILL.md")))) {
   const head = readFileSync(join(skillsDir, s, "SKILL.md"), "utf8").match(/^---\n([\s\S]*?)\n---/)?.[1] ?? "";
   if (!/^name:\s*\S/m.test(head) || !/^description:\s*\S/m.test(head)) errors.push(`skills/${s}/SKILL.md needs name and description frontmatter`);
