@@ -50,6 +50,6 @@ For deeper workflows, see the `investigate-friction` and `analyze-funnel` skills
 
 ## Things to know
 
-- A funnel that was just created or had its steps changed is "processing" for a few minutes; its numbers and edits are unavailable until it finishes.
+- A funnel that was just created or had its steps changed is "processing" for a few minutes; its numbers are unavailable until it finishes.
 - `generate_segment_from_prompt` and `generate_funnel_steps_from_prompt` only draft definitions with an AI model; they save nothing.
-- Creating, editing and deleting segments, funnels, heatmaps, dashboards and charts is covered by the `manage-assets` skill.
+- These tools only read data. Segments, funnels, heatmaps, dashboards and charts are created and edited in the FullSession app; the `generate_*` tools can draft a definition for the user to paste there.
