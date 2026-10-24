@@ -54,6 +54,4 @@ To try a package: ChatGPT → Plugins → Add → **Upload plugin archive**; cla
 - `shared/assets/source/wordmark*.png`, `logo-*.svg`: the full "fullsession" wordmark from fullsession.io. Not usable as the listing logo (must be square); kept for screenshots and docs.
 - Screenshots: TODO, capture the widget cards.
 
-## Submission notes
 
-- Category is set to "Analytics and Data" (from the public directory categories); confirm the exact option in the submission dropdown.
