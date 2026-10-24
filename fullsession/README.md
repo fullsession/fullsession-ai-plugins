@@ -5,8 +5,7 @@ See how visitors really use your website, right from Claude. Ask about frustrate
 - Find where visitors struggle and why: pages and elements with rage, dead and error clicks
 - See where your funnels lose people, and who dropped
 - Find and replay sessions
-- Track trends and get AI recommendations on what to fix
-- Create and update funnels, segments and dashboards
+- Track trends, read your dashboards and get AI recommendations on what to fix
 
 ## Use it
 

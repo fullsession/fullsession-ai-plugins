@@ -21,7 +21,7 @@
       "interface": {
         "displayName": "FullSession",
         "shortDescription": "Session replay & UX insights",
-        "longDescription": "See how visitors really use your website, right from ChatGPT. Ask about frustrated pages, funnel drop-offs or specific sessions, and get clear answers with charts and links to the session replays.\n\n- Find where visitors struggle and why\n- See where your funnels lose people\n- Find and replay sessions\n- Track trends and get AI recommendations on what to fix\n- Create and update funnels, segments and dashboards",
+        "longDescription": "See how visitors really use your website, right from ChatGPT. Ask about frustrated pages, funnel drop-offs or specific sessions, and get clear answers with charts and links to the session replays.\n\n- Find where visitors struggle and why\n- See where your funnels lose people\n- Find and replay sessions\n- Track trends, read your dashboards and get AI recommendations on what to fix",
         "developerName": "FullSession",
         "category": "Analytics and Data",
         "capabilities": [
@@ -29,8 +29,7 @@
           "Analyze funnel drop-offs",
           "Search and replay sessions",
           "Trends, breakdowns and dashboards",
-          "Lift AI conversion recommendations",
-          "Create and edit funnels, segments and dashboards"
+          "Lift AI conversion recommendations"
         ],
         "websiteURL": "https://www.fullsession.io",
         "supportURL": "https://www.fullsession.io/contact",
@@ -78,10 +77,10 @@
               "expected_behavior": "Shows a trend chart with the total, a dashed previous-period line, and the percentage change."
             },
             {
-              "description": "TODO(reviewer account data) Create a funnel with confirmation",
-              "prompt": "Create a funnel called 'Pricing to signup' with two steps: visit /pricing, then visit /signup.",
-              "tools_triggered": "generate_funnel_steps_from_prompt, create_funnel",
-              "expected_behavior": "Drafts the two steps, asks the user to confirm them, then (after ChatGPT's approval prompt) creates the funnel and says it is processing."
+              "description": "TODO(reviewer account data) Drill into one session",
+              "prompt": "Open the most recent session with a JavaScript error and walk me through what happened.",
+              "tools_triggered": "search_sessions, get_session",
+              "expected_behavior": "Finds a recent session with a JavaScript error, then summarizes its timeline: pages visited, the error and where it happened, with a Replay link."
             }
           ],
           "negative": [
@@ -104,7 +103,7 @@
         "commerce_description": "FullSession does not sell products or process payments in ChatGPT."
       },
       "publication": {
-        "release_notes": "Initial release: frustration, funnel, session, trend and dashboard analysis with interactive cards; create and edit segments, funnels, heatmaps, dashboards and charts."
+        "release_notes": "Initial release: frustration, funnel, session, trend and dashboard analysis with interactive cards, and AI recommendations on what to fix."
       }
     }
   }

@@ -7,7 +7,7 @@ description: How to analyze a conversion funnel in FullSession, find the biggest
 
 ## 1. Find the funnel
 
-`list_funnels` returns the site's funnels with their step names. Match the user's wording ("checkout", "signup") to a funnel name; if several fit, ask. If no funnel exists for what they describe, offer to create one (see `manage-assets`).
+`list_funnels` returns the site's funnels with their step names. Match the user's wording ("checkout", "signup") to a funnel name; if several fit, ask. If no funnel exists for what they describe, say so: the user can create it in the FullSession app, and `generate_funnel_steps_from_prompt` can draft its steps.
 
 ## 2. Read the funnel
 
