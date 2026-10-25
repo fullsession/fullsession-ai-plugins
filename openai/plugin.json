@@ -54,31 +54,31 @@
           "positive": [
             {
               "description": "Find the pages with the most frustration",
-              "prompt": "Which pages on fullsession.io had the most rage clicks in the last 30 days?",
+              "prompt": "Which pages on 0verclockers.co.uk had the most rage clicks in the last 30 days?",
               "tools_triggered": "list_sites, compare_pages_by_frustration",
-              "expected_behavior": "Shows a card ranking fullsession.io pages by rage clicks, with affected sessions per page, and a short summary of the top page. Expanding a page shows the elements that were rage-clicked."
+              "expected_behavior": "Shows a card ranking 0verclockers.co.uk pages by rage clicks, with affected sessions per page, and a short summary of the top page. Expanding a page shows the elements that were rage-clicked."
             },
             {
               "description": "Funnel drop-off analysis",
-              "prompt": "Which step of my funnel on fullsession.io loses the most people in the last 30 days?",
+              "prompt": "Which step of my funnel on 0verclockers.co.uk loses the most people in the last 30 days?",
               "tools_triggered": "list_sites, list_funnels, get_funnel_analysis",
               "expected_behavior": "Picks the site's funnel (or asks which one if there are several), then shows a funnel card with the conversion rate, the count at each step, and the step with the biggest drop highlighted."
             },
             {
               "description": "Search sessions with JavaScript errors",
-              "prompt": "Show me recent sessions on fullsession.io that had JavaScript errors.",
+              "prompt": "Show me recent sessions on 0verclockers.co.uk that had JavaScript errors.",
               "tools_triggered": "list_sites, search_sessions",
               "expected_behavior": "Shows session cards with time, device, country, pages visited and an error badge, each with a Replay button. Visitor emails and names are masked."
             },
             {
               "description": "Traffic trend over time",
-              "prompt": "How did sessions on fullsession.io change over the last 30 days compared to the previous 30 days?",
+              "prompt": "How did sessions on 0verclockers.co.uk change over the last 30 days compared to the previous 30 days?",
               "tools_triggered": "list_sites, get_trend",
               "expected_behavior": "Shows a trend chart of daily sessions with the total, a dashed previous-period line and the percentage change, plus a one-line summary."
             },
             {
               "description": "Drill into one session",
-              "prompt": "Open the most recent session on fullsession.io with a JavaScript error and walk me through what happened.",
+              "prompt": "Open the most recent session on 0verclockers.co.uk with a JavaScript error and walk me through what happened.",
               "tools_triggered": "list_sites, search_sessions, get_session",
               "expected_behavior": "Finds the most recent session with a JavaScript error, then summarizes its timeline: the pages visited in order, the error message and the page it happened on, with a Replay link."
             }
