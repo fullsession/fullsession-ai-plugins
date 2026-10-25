@@ -23,7 +23,7 @@
         "shortDescription": "Session replay & UX insights",
         "longDescription": "See how visitors really use your website, right from ChatGPT. Ask about frustrated pages, funnel drop-offs or specific sessions, and get clear answers with charts and links to the session replays.\n\n- Find where visitors struggle and why\n- See where your funnels lose people\n- Find and replay sessions\n- Track trends, read your dashboards and get AI recommendations on what to fix",
         "developerName": "FullSession",
-        "category": "Analytics and Data",
+        "category": "Data & Analytics",
         "capabilities": [
           "Find frustrated pages and elements",
           "Analyze funnel drop-offs",
