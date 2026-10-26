@@ -54,33 +54,33 @@
           "positive": [
             {
               "description": "Find the pages with the most frustration",
-              "prompt": "Which pages on 0verclockers.co.uk had the most rage clicks in the last 30 days?",
+              "prompt": "Which pages on 0verclockers.co.uk had the most rage clicks between September 19 and October 18, 2026?",
               "tools_triggered": "list_sites, compare_pages_by_frustration",
-              "expected_behavior": "Shows a card ranking 0verclockers.co.uk pages by rage clicks, with affected sessions per page, and a short summary of the top page. Expanding a page shows the elements that were rage-clicked."
+              "expected_behavior": "Shows a card ranking 0verclockers.co.uk pages by rage clicks for that date range, with affected sessions per page, and a short summary of the top page. Expanding a page shows the elements that were rage-clicked."
             },
             {
               "description": "Funnel drop-off analysis",
-              "prompt": "Which step of my funnel on 0verclockers.co.uk loses the most people in the last 30 days?",
+              "prompt": "Which step of my funnel on 0verclockers.co.uk lost the most people between September 19 and October 18, 2026?",
               "tools_triggered": "list_sites, list_funnels, get_funnel_analysis",
-              "expected_behavior": "Picks the site's funnel (or asks which one if there are several), then shows a funnel card with the conversion rate, the count at each step, and the step with the biggest drop highlighted."
+              "expected_behavior": "Picks the site’s checkout funnel (or asks which one if there are several), then shows a funnel card with the conversion rate, the count at each step, and the step with the biggest drop highlighted."
             },
             {
               "description": "Search sessions with JavaScript errors",
-              "prompt": "Show me recent sessions on 0verclockers.co.uk that had JavaScript errors.",
+              "prompt": "Show me sessions on 0verclockers.co.uk that had JavaScript errors between September 19 and October 18, 2026.",
               "tools_triggered": "list_sites, search_sessions",
-              "expected_behavior": "Shows session cards with time, device, country, pages visited and an error badge, each with a Replay button. Visitor emails and names are masked."
+              "expected_behavior": "Shows session cards from that date range with time, device, country, pages visited and an error badge, each with a Replay button, plus the total number of matching sessions. Visitor emails and names are masked."
             },
             {
-              "description": "Traffic trend over time",
-              "prompt": "How did sessions on 0verclockers.co.uk change over the last 30 days compared to the previous 30 days?",
-              "tools_triggered": "list_sites, get_trend",
-              "expected_behavior": "Shows a trend chart of daily sessions with the total, a dashed previous-period line and the percentage change, plus a one-line summary."
+              "description": "Traffic by country",
+              "prompt": "Which countries brought the most sessions to 0verclockers.co.uk between September 19 and October 18, 2026?",
+              "tools_triggered": "list_sites, get_breakdown",
+              "expected_behavior": "Lists the top countries by number of sessions for that date range, with the session count for each, and a one-line summary comparing the top countries."
             },
             {
-              "description": "Drill into one session",
-              "prompt": "Open the most recent session on 0verclockers.co.uk with a JavaScript error and walk me through what happened.",
-              "tools_triggered": "list_sites, search_sessions, get_session",
-              "expected_behavior": "Finds the most recent session with a JavaScript error, then summarizes its timeline: the pages visited in order, the error message and the page it happened on, with a Replay link."
+              "description": "Sessions behind a funnel drop-off",
+              "prompt": "Show me sessions from visitors who dropped off at the cart step of my funnel on 0verclockers.co.uk between September 19 and October 18, 2026.",
+              "tools_triggered": "list_sites, list_funnels, get_funnel_analysis, get_funnel_sessions",
+              "expected_behavior": "Finds the checkout funnel, identifies the cart step, then shows session cards for visitors who reached the cart but did not continue, with the total number of dropped sessions and Replay buttons."
             }
           ],
           "negative": [
