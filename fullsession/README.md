@@ -19,7 +19,7 @@ The plugin's skills guide Claude through common investigations, such as tracing 
 
 ## Data
 
-The plugin connects to FullSession's MCP server at `https://app.fullsession.io/mcp` using your own FullSession sign-in. Claude sends FullSession the data requests needed to answer your questions (such as a site, a time range or a funnel) and receives analytics and session information from the sites your account can access. When you ask Claude to draft a segment or funnel, your description is sent to FullSession to create the draft. Creating, changing or deleting items happens only when you ask, and Claude asks you to confirm first. The plugin stores nothing itself. See FullSession's [privacy policy](https://www.fullsession.io/privacy-policy).
+The plugin connects to FullSession's MCP server at `https://app.fullsession.io/mcp` using your own FullSession sign-in. Claude sends FullSession the data requests needed to answer your questions (such as a site, a time range or a funnel) and receives analytics and session information from the sites your account can access. The connector is read-only: it never creates, changes or deletes anything in your FullSession account. The plugin stores nothing itself. See FullSession's [privacy policy](https://www.fullsession.io/privacy-policy).
 
 ## Support
 
